@@ -77,35 +77,35 @@ const handleSetDuration = (): void => {
     setDuration(Number(e.target.value) || "");
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900">
+ return (
+    <div className="flex flex-col border items-center justify-center h-screen bg-black-100 dark:bg-white-900">
       {/* Timer box container */}
-      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-md">
+      <div className=" shadow-white  border rounded bg-black dark:bg-white-800 shadow-lg rounded-lg p-8 w-full max-w-md">
         {/* Title of the countdown timer */}
-        <h1 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200 text-center">
+        <h1 className="text-2xl font-bold mb-4 text-white-800 dark:text-white-200 text-center">
           Countdown Timer
         </h1>
         {/* Input and set button container */}
-         <div className="flex items-center mb-6 text-gray-800 dark:text-gray-200" color="black">
-          <Input 
+         <div className="flex items-center mb-6 text-white-800 dark:text-white-200" >
+          <Input
+            className="flex-1 mr-4 rounded-md border-white-900   placeholder-white text-white dark:placeholder-white dark:border-white-900 dark:bg-white-700 dark:text-white"
             type="number"
             id="duration"
-            placeholder="Enter duration in seconds"
+            placeholder ="Enter duration in seconds"
             value={duration}
             onChange={handleDurationChange}
-            className="flex-1 mr-4 rounded-md border-black-900 color-black dark:border-black-900 dark:bg-gray-700 dark:text-black-100"
           /> 
           
           <Button
             onClick={handleSetDuration}
             variant="outline"
-            className="text-gray-800 dark:text-gray-200"
+            className="text-white-800 dark:text-white-200"
           >
             Set
           </Button>
         </div>
         {/* Display the formatted time left */}
-        <div className="text-6xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
+        <div className="text-6xl font-bold text-white-800 dark:text-white-200 mb-8 text-center">
           {formatTime(timeLeft)}
         </div>
         {/* Buttons to start, pause, and reset the timer */}
@@ -113,21 +113,21 @@ const handleSetDuration = (): void => {
           <Button
             onClick={handleStart}
             variant="outline"
-            className="text-gray-800 dark:text-gray-200"
+            className="text-white-800 dark:text-white-200"
           >
             {isPaused ? "Resume" : "Start"}
           </Button>
           <Button
             onClick={handlePause}
             variant="outline"
-            className="text-gray-800 dark:text-gray-200"
+            className="text-white-800 dark:text-white-200"
           >
             Pause
           </Button>
           <Button
             onClick={handleReset}
             variant="outline"
-            className="text-gray-800 dark:text-gray-200"
+            className="text-white-800 dark:text-white-200"
           >
             Reset
           </Button>
@@ -136,3 +136,4 @@ const handleSetDuration = (): void => {
     </div>
   )
 };
+
